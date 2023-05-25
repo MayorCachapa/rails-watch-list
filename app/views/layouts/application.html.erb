@@ -5,12 +5,41 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon px-3">
+      <a href="/">
+        <img alt="logo" class="logo" src="/assets/">
+      </a>  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to 'My Lists', lists_path %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'New List', new_list_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+    <div class="container">
+      <h1>Create your own movie-lists <strong>fast</strong> and <strong>easy</strong>!</h1>
+      <p>Start now creating your own!</p>
+        <%= link_to "Create new list", new_list_path, class: 'btn btn-flat'%>
+
+    </div>
+  </div>
+    
     <%= yield %>
   </body>
 </html>

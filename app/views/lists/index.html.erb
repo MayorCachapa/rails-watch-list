@@ -1,0 +1,7 @@
+<h3>My lists</h3>
+
+<ul>
+    <% for list in @lists %>
+        <li><%= link_to @lists.name, list_path(list) %></li>
+    <% end %>
+</ul>
